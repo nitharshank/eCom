@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Alert, Image, Pressable, TouchableOpacity, StyleSheet, Switch, Text, Keyboard, View } from 'react-native'
+import {Image, TouchableOpacity, Text, Keyboard, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Input, Button } from 'react-native-elements';
 import NetInfo from '@react-native-community/netinfo';
@@ -12,7 +11,6 @@ import { useLoader } from '../../provider/LoaderProvider';
 import COLORS from '../../config/colors';
 import { authenticateUser } from '../../api/api-service';
 import styles from './styles';
-import { ColorSpace } from 'react-native-reanimated';
 
 
 const LoginScreen = () => {
@@ -44,10 +42,11 @@ const LoginScreen = () => {
     };
 
     const onAuthError = (errorMessage) => {
+        console.log('authenticateUser Error');
     };
 
     const onPressLogin = async () => {
-        setIsShowLoader(true);
+        //setIsShowLoader(true);
         await authenticateUser(inputs, onAuthSuccess, onAuthError);
     };
 
@@ -114,7 +113,7 @@ const LoginScreen = () => {
                     <Button
                         buttonStyle={styles.loginBtn}
                         title="LOGIN"
-                        onPress={onPressLogin}
+                        onPress={checkConnectivity}
                         titleStyle={styles.loginBtnText}
                         disabled={
                             inputs.email.value === '' ||

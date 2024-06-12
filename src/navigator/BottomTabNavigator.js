@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-//import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Screens
 import HomeScreen from '../screens/Main/Home/HomeScreen';
 import CartScreen from '../screens/Main/CartScreen';
-import ProfileScreen from '../screens/Main/ProfileScreen';
+import ProfileScreen from '../screens/Main/Profile/ProfileScreen';
 import COLORS from '../config/colors';
 
 //Screen names
@@ -44,7 +43,7 @@ function MainContainer() {
         tabBarOptions={{
           activeTintColor: COLORS.blue,
           inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
+          showLabel: false,
           style: { padding: 10, height: 70}
         }}>
 

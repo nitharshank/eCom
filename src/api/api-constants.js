@@ -6,8 +6,9 @@ export class APIConstants {
 
   static BASE_URL = 'https://dummyjson.com/';
   static CONTENT_TYPE = 'application/json';
-  static ACTION_POST_LOGIN = 'auth/login';
-  static ACTION_GET_FETCH_PRODUCTS = 'products';
+  static ACTION_LOGIN = 'auth/login';
+  static ACTION_FETCH_USER = 'users/';
+  static ACTION_FETCH_PRODUCTS = 'products';
 
   static GET = 'GET';
   static POST = 'POST';

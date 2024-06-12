@@ -7,9 +7,8 @@ import styles from './styles';
 export default function HomeScreen({ navigation }) {
 
   const [products, setProducts] = useState([]);
-
   const onPressProduct = async (journey, jStatus) => {
-
+    
   };
 
   useEffect(() => {
@@ -27,8 +26,6 @@ export default function HomeScreen({ navigation }) {
 
     fetchProducts();
   }, []);
-
-
 
 
   return (
