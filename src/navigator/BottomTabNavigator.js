@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Screens
-import HomeScreen from '../screens/Main/HomeScreen';
+import HomeScreen from '../screens/Main/Home/HomeScreen';
 import CartScreen from '../screens/Main/CartScreen';
 import ProfileScreen from '../screens/Main/ProfileScreen';
 import COLORS from '../config/colors';
