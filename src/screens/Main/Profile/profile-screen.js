@@ -5,11 +5,10 @@ import { View, Image } from 'react-native';
 import { Button } from 'react-native-elements';
 import { fetchUserDetail } from '../../../api/api-service';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from './styles';
-import COLORS from '../../../config/colors';
 import profileUserData from './profile-data';
 import { useLogin } from '../../../provider/LoginProvider';
 import ProfileTextView from '../../../components/profileTextView/profile-text-component';
+import styles from './styles';
 
 const ProfileScreen = ({ navigation }) => {
   const { setIsLoggedIn } = useLogin();

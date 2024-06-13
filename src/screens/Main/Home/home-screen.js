@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList } from 'react-native';
 import { fetchProductList } from '../../../api/api-service';
 import ProductCardView from '../../../components/productCard/product-card-view';
+import { Screens } from '../../../config';
 import styles from './styles';
 
-export default function HomeScreen({ navigation }) {
-
+export default function HomeScreen({ navigation: { navigate } }) {
   const [products, setProducts] = useState([]);
-  const onPressProduct = async (journey, jStatus) => {
-    
+
+  const onPressProduct = async (product) => {
+    navigate(Screens.DetailsScreen, { productId: product?.product?.id });
   };
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Image, TouchableOpacity, Text, Keyboard, View } from 'react-native'
+import { Image, TouchableOpacity, Text, Keyboard, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Input, Button } from 'react-native-elements';
@@ -38,15 +38,16 @@ const LoginScreen = () => {
 
     const onAuthSuccess = (resp) => {
         AsyncStorage.setItem(Constant.USER_DATA, JSON.stringify(resp));
+        setIsShowLoader(false);
         setIsLoggedIn(true);
     };
 
     const onAuthError = (errorMessage) => {
+        setIsShowLoader(false);
         console.log('authenticateUser Error');
     };
 
     const onPressLogin = async () => {
-        //setIsShowLoader(true);
         await authenticateUser(inputs, onAuthSuccess, onAuthError);
     };
 
@@ -54,6 +55,7 @@ const LoginScreen = () => {
     const checkConnectivity = () => {
         NetInfo.fetch().then(state => {
             if (state.isConnected) {
+                setIsShowLoader(true);
                 Keyboard.dismiss();
                 onPressLogin();
             } else {

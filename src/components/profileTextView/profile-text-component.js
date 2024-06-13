@@ -10,7 +10,6 @@ const ProfileTextView = ({ itemObj }) => {
   return (
     <View style={styles.detailContainer}>
       <Icon name={itemObj.image} size={20} color={COLORS.grey} />
-      
       <Text style={styles.textContainer}>{itemObj.label}</Text>
       <Text style={styles.textValueContainer}>{itemObj?.textValue} </Text>
     </View>

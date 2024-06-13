@@ -1,23 +1,27 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import { NavigationContainer } from '@react-navigation/native';
 // Screens
-import HomeScreen from '../screens/Main/Home/HomeScreen';
+import HomeScreen from '../screens/Main/Home/home-screen';
 import CartScreen from '../screens/Main/CartScreen';
-import ProfileScreen from '../screens/Main/Profile/ProfileScreen';
+import ProfileScreen from '../screens/Main/Profile/profile-screen';
+import DetailsScreen from '../screens/Main/Home/product-detail/product-detail';
 import COLORS from '../config/colors';
 
-//Screen names
-const homeName = "Home";
-const detailsName = "Cart";
-const settingsName = "Profile";
+const BaseScreenNavigation = () => {
 
-const Tab = createBottomTabNavigator();
+  //Screen names
+  const homeName = "Home";
+  const detailsName = "Cart";
+  const settingsName = "Profile";
 
-function MainContainer() {
-  return (
-  
+  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
+
+  function BottomTabStack() {
+    return (
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
@@ -28,7 +32,7 @@ function MainContainer() {
             if (rn === homeName) {
               iconName = focused ? 'home' : 'home-outline';
 
-            } else if (rn === detailsName) {
+            } else if (rn === detailsName) {``
               iconName = focused ? 'cart' : 'cart-outline';
 
             } else if (rn === settingsName) {
@@ -39,20 +43,39 @@ function MainContainer() {
             return <Icon name={iconName} size={size} color={color} />;
           },
         })}
-        
+
         tabBarOptions={{
           activeTintColor: COLORS.blue,
           inactiveTintColor: 'grey',
           showLabel: false,
-          style: { padding: 10, height: 70}
+          style: { padding: 10, height: 70 }
         }}>
 
-        <Tab.Screen name={homeName} component={HomeScreen} />
+        <Tab.Screen name={homeName} children={props => <HomeScreen {...props} />} />
         <Tab.Screen name={detailsName} component={CartScreen} />
         <Tab.Screen name={settingsName} component={ProfileScreen} />
 
       </Tab.Navigator>
+    );
+  }
+
+
+  return (
+  
+      <Stack.Navigator>
+        <Stack.Screen
+          name=  {"BottomTabStack"}
+          component={BottomTabStack}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+      </Stack.Navigator>
   );
+
+
 }
 
-export default MainContainer;
+
+
+
+export default BaseScreenNavigation;

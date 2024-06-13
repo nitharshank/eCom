@@ -7,7 +7,7 @@ const ProductCardView = ({ product, productClick }) => {
 
   return (
     <View style={styles.shadowCardContainer}>
-      <TouchableWithoutFeedback onPress={() => productClick(product)}>
+      <TouchableWithoutFeedback onPress={() => productClick({product})}>
         <View style={styles.shadowCard}>
           <Text style={styles.productTitle}>{product?.title}</Text>
           <Text style={styles.productDescription} numberOfLines={1}>{product?.description}</Text>
