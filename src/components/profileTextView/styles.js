@@ -10,9 +10,6 @@ const styles = StyleSheet.create({
     alignItems: 'left',
     justifyContent: 'left',
   },
-  iconContainer: {
-
-  },
   textContainer: {
     marginLeft: 12,
     marginRight: 10,

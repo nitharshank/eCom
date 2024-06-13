@@ -41,17 +41,17 @@ const ProfileScreen = ({ navigation }) => {
     setIsLoggedIn(false);
   };
 
-
-
-
   return (
-    <View style={styles.containerBase}>
-      <Image style={styles.profileImage} source={user?.image ? { uri: user?.image } : require('../../../assets/images/user.png')} />
-      {arrayData.map((data) => {
-        return <ProfileTextView itemObj={data} />;
-      })}
-
-      <View style={styles.footer} >
+    <View style={styles.container}>
+      <View style={styles.imageContainer} >
+        <Image style={styles.profileImage} source={user?.image ? { uri: user?.image } : require('../../../assets/images/user.png')} />
+      </View>
+      <View style={styles.textContent} >
+        {arrayData.map((data) => {
+          return <ProfileTextView itemObj={data} />;
+        })}
+      </View>
+      <View style={styles.box3} >
         <Button
           buttonStyle={styles.logoutBtn}
           title="Logout"

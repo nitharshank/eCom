@@ -46,7 +46,6 @@ export default function HomeScreen({ navigation: { navigate } }) {
             />
           </View>
         </View> : null}
-
     </View>
   );
 }

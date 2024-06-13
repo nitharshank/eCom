@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 // Screens
 import HomeScreen from '../screens/Main/Home/home-screen';
-import CartScreen from '../screens/Main/CartScreen';
+import CartScreen from '../screens/Main/Cart/cart-screen';
 import ProfileScreen from '../screens/Main/Profile/profile-screen';
 import DetailsScreen from '../screens/Main/Home/product-detail/product-detail';
 import COLORS from '../config/colors';

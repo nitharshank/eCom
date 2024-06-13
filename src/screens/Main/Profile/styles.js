@@ -31,6 +31,24 @@ const styles = StyleSheet.create({
     logoutBtnText: {
         fontSize: FontSize.ftSize_15,
     },
+
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 20,
+      },
+      imageContainer: {
+          height: 200,
+          alignItems: 'center',
+      },
+      textContent: {
+        paddingLeft: 15,
+        marginTop: 20,
+          flex: 2,
+      },
+      box3: {
+          height: 50,
+      },
 });
 
 export default styles;
