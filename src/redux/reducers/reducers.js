@@ -7,7 +7,7 @@ const initialState = {
 function productReducer(state = initialState, action) {
     switch (action.type) {
         case SET_PRODUCT_DATA:
-            return { ...state, name: action.payload };
+            return { ...state, product: action.payload };
         default:
             return state;
     }

@@ -41,11 +41,6 @@ textInput: {
     fontSize: 16,
     marginLeft: 10,
 },
-
-
-
-
-
 container: {
     alignItems: "center",
     paddingTop: 70,

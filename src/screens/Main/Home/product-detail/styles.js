@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
         padding: 15,
         flexDirection: 'row',
         height: 200,
-        marginTop: 30
     },
     leftArrow: {
         justifyContent: 'center',
@@ -68,6 +67,43 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         color: COLORS.dark_900,
         fontSize: FontSize.ftSize_14,
+      },
+      sliderContainer: {
+        paddingHorizontal: 50,
+        flexDirection: 'row',
+        height: 50,
+        marginTop: 30
+    },
+    slider: {
+        flex: 1,
+       justifyContent: 'center',
+        alignItems: 'center',
+    },
+    sliderText: {
+        justifyContent: 'center',
+        height: 50
+    },
+    addToCartBtn: {
+        height: 45,
+        marginBottom: 10,
+        backgroundColor: COLORS.blue,
+    },
+    addToCartBtnText: {
+        fontSize: FontSize.ftSize_15,
+    },
+    baseContainer: {
+        padding: 20,
+        flexDirection: 'column',
+        marginTop: 50
+      },
+    
+     
+      box1: {
+        height: '90%',
+      },
+    
+      box3: {
+        height: 50
       },
 });
 
