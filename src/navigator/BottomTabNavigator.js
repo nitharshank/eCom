@@ -2,7 +2,6 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native';
 // Screens
 import HomeScreen from '../screens/Main/Home/home-screen';
 import CartScreen from '../screens/Main/Cart/cart-screen';
@@ -61,7 +60,6 @@ const BaseScreenNavigation = () => {
 
 
   return (
-  
       <Stack.Navigator>
         <Stack.Screen
           name=  {"BottomTabStack"}
@@ -71,11 +69,7 @@ const BaseScreenNavigation = () => {
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
       </Stack.Navigator>
   );
-
-
 }
-
-
 
 
 export default BaseScreenNavigation;
